@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://vites.dev/sitemap.xml
