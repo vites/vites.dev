@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="es">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rendimiento de consultas Db2 desde COBOL batch · Santiago Vites</title>
+<meta name="description" content="Toma una ejecución de referencia con un volumen representativo. Registra tiempo transcurrido, CPU y número de llamadas SQL. El tiempo total del paso también puede incluir esperas por bloqueos o por E/S de ficheros, así que úsalo junto con las métricas de Db2.">
+<link rel="canonical" href="https://vites.dev/notas/db2-batch.html">
+<link rel="stylesheet" href="../estilos.css">
+<body>
+<header><a class="marca" href="../">vites.dev</a><nav aria-label="Principal"><a href="../#notas">Todas las notas</a></nav></header>
+<main class="lectura"><article>
+<p class="acento">Db2 · Batch</p>
+<h1>Rendimiento de consultas Db2 desde COBOL batch</h1>
+<h2>Separar el tiempo SQL del resto del job</h2><p>Toma una ejecución de referencia con un volumen representativo. Registra tiempo transcurrido, CPU y número de llamadas SQL. El tiempo total del paso también puede incluir esperas por bloqueos o por E/S de ficheros, así que úsalo junto con las métricas de Db2.</p>
+<h2>Revisar el acceso y la frecuencia</h2><p>Comprueba si el programa ejecuta la misma consulta por cada registro de entrada. Un acceso rápido repetido miles de veces puede dominar el coste del lote. Usa EXPLAIN para comparar los caminos de acceso y revisa los predicados y el volumen de filas que necesita cada consulta.</p>
+<h2>Validar resultados y coste</h2><p>Compara antes y después con los mismos datos y condiciones. Revisa CPU, tiempo transcurrido y número de accesos. Contrasta también los recuentos y totales de salida para comprobar que el cambio conserva el comportamiento funcional.</p>
+</article></main>
+<footer>Santiago Vites</footer>
+</body>
+</html>
