@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="es">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Integrar un core asegurador Mainframe con servicios REST · Santiago Vites</title>
+<meta name="description" content="Una consulta de póliza y una operación que modifica una póliza tienen necesidades distintas. Define entradas, salidas y errores de negocio. Mantén la representación del API estable aunque cambien los formatos internos del Host.">
+<link rel="canonical" href="https://vites.dev/notas/mainframe-rest.html">
+<link rel="stylesheet" href="../estilos.css">
+<body>
+<header><a class="marca" href="../">vites.dev</a><nav aria-label="Principal"><a href="../#notas">Todas las notas</a></nav></header>
+<main class="lectura"><article>
+<p class="acento">Mainframe · REST</p>
+<h1>Integrar un core asegurador Mainframe con servicios REST</h1>
+<h2>Definir el contrato a partir del proceso</h2><p>Una consulta de póliza y una operación que modifica una póliza tienen necesidades distintas. Define entradas, salidas y errores de negocio. Mantén la representación del API estable aunque cambien los formatos internos del Host.</p>
+<h2>Decidir qué ocurre si se pierde una respuesta</h2><p>Si una escritura se confirma en el Host pero la respuesta se pierde, un reintento puede duplicar la operación. Diseña una clave de idempotencia y guarda su resultado de forma consistente con el cambio de negocio. Usa un identificador de correlación para seguir la petición entre sistemas.</p>
+<h2>Probar con datos ficticios</h2><p>Incluye casos de timeout, reintento, caída parcial y petición duplicada. Verifica el estado que queda en ambos extremos y comprueba que los registros de diagnóstico permiten reconstruir la operación sin contener datos personales ni credenciales.</p>
+</article></main>
+<footer>Santiago Vites</footer>
+</body>
+</html>
